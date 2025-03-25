@@ -1,20 +1,34 @@
 const projects = [
     {
         number: '01',
+        name: '🚀 MealDash - Ultimate Food Delivery Experience 🍔',
+        description: 'MealDash is a Flutter-based food delivery application offering an intuitive UI, restaurant listings, real-time tracking, and smooth checkout. Users can browse menus, place orders, and track deliveries effortlessly.',
+        videoId: 'KElHLh_dMIA',
+        apkLink: 'https://drive.google.com/uc?export=download&id=1lb6sJ80xGGJH2qFeAzBhWXwvDvhY2IGb'
+    },
+    {
+        number: '02',
+        name: '🍽️ MealDash Admin Panel - Ultimate Restaurant Control 🍕',
+        description: 'The MealDash Admin Panel is a cutting-edge Flutter application designed to revolutionize restaurant management. With an intuitive dashboard, real-time order tracking, and seamless menu customization, restaurant owners can streamline operations effortlessly. Built with <strong>Supabase</strong> for secure and scalable data management, it ensures top-tier performance. 🚀<br><br><strong>Note:</strong> This admin panel contains <strong>highly sensitive controls</strong>, so the APK is not publicly available.',
+        videoId: 'Of4-P8DbJeY',
+        apkLink: ''
+    },
+    {
+        number: '03',
         name: '🛍️ ShopEase - E-Commerce Application 🚀',
         description: 'ShopEase is a Flutter-based e-commerce app powered by Firebase. It offers product search, order placement, payments, and order tracking. An admin panel allows easy product management, while Firebase ensures authentication and real-time data handling.',
         videoId: 'wr96lXelWWs',
         apkLink: 'https://drive.google.com/uc?export=download&id=1kbfhy5VWkgsQ4MiyIQbyTBghLQteVoVd'
     },
     {
-        number: '02',
-        name: 'Food Delivery Admin Panel',
-        description: 'A Flutter-based admin app connected to a Supabase backend for managing restaurants and their menus. Allows adding and deleting data directly in the database.\n ⚠ No download link available due to sensitive permissions.',
-        videoId: 'wr96lXelWWs',
+        number: '04',
+        name: '🛍️ ShopEase Admin Panel - Seamless E-Commerce Management 🛒',
+        description: 'The ShopEase Admin Panel is a <strong>powerful back-end system</strong> that empowers e-commerce store owners with effortless product management, real-time order monitoring, and customer insights. Designed with <strong>Flutter and Firebase</strong>, it ensures <strong>secure authentication, smooth UI, and instant updates</strong>. Whether adding new products, tracking sales, or managing user interactions, ShopEase Admin simplifies the entire process. 📦✨<br><br><strong>Note:</strong> Due to <strong>sensitive administrative access</strong>, the APK is not publicly available.',
+        videoId: 'Ts8j21MRdEs',
         apkLink: ''
     },
     {
-        number: '03',
+        number: '05',
         name: 'WeatherGlobe 🌍☁️',
         description: 'WeatherGlobe is a Flutter-based weather app that provides real-time forecasts using a free API. With a simple search, users can check temperature, humidity, and conditions for any city instantly. Perfect for trip planning or staying updated, it delivers accurate weather insights anytime.',
         videoId: 'GRoXv7mPhNo',
