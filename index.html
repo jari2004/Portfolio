@@ -7,43 +7,11 @@
     <title>Flutter Developer Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        body {
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: white;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .glass {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(12px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, #38bdf8, #22d3ee, #2dd4bf);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hover-scale {
-            transition: transform 0.3s ease;
-        }
-
-        .hover-scale:hover {
-            transform: scale(1.03);
-        }
-
-        .tech-icon {
-            filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.3));
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="flex flex-col items-center justify-center min-h-screen">
+<body
+    class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
 
     <!-- Navbar -->
     <nav class="fixed top-5 w-auto px-6 py-3 glass flex space-x-6 text-lg font-medium z-50">
@@ -64,37 +32,31 @@
                     <img src="assets/profile.jpg" alt="Syed Jari Abbas"
                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
                 </div>
-
                 <div class="flex-1 text-center md:text-left">
                     <!-- Name -->
                     <h1
                         class="text-3xl xs:text-4xl sm:text-[2.5rem] md:text-5xl font-bold mb-2 gradient-text animate-pop-down leading-tight">
                         Hi, I'm Syed Jari Abbas
                     </h1>
-
                     <!-- Title -->
                     <h2
                         class="text-xl sm:text-2xl md:text-[1.75rem] font-semibold mb-4 text-cyan-300 animate-pop-down animation-delay-100">
                         Flutter Developer
                     </h2>
-
                     <!-- Description -->
                     <div class="typewriter-container mb-6 text-base sm:text-lg text-gray-300 md:max-w-[90%]">
                         <!-- JavaScript will populate this -->
                     </div>
-
-                    <!-- Buttons - Updated for PC only -->
+                    <!-- Buttons -->
                     <div
                         class="flex flex-col xs:flex-row gap-3 sm:gap-4 justify-center md:justify-start animate-pop-up animation-delay-300">
                         <a href="#contact"
-                            class="px-5 py-2.5 sm:px-6 sm:py-3 bg-cyan-500 hover:bg-cyan-600 rounded-full font-medium transition-colors text-sm sm:text-base
-                                   md:bg-gradient-to-r md:from-cyan-500 md:to-blue-500 md:hover:from-cyan-600 md:hover:to-blue-600 md:hover:shadow-lg md:hover:shadow-cyan-500/30 md:hover:-translate-y-0.5">
+                            class="px-5 py-2.5 sm:px-6 sm:py-3 bg-cyan-500 hover:bg-cyan-600 rounded-full font-medium transition-colors text-sm sm:text-base md:bg-gradient-to-r md:from-cyan-500 md:to-blue-500 md:hover:from-cyan-600 md:hover:to-blue-600 md:hover:shadow-lg md:hover:shadow-cyan-500/30 md:hover:-translate-y-0.5">
                             Hire Me <i
                                 class="fas fa-arrow-right ml-1 md:opacity-0 md:group-hover:opacity-100 md:transition-opacity"></i>
                         </a>
                         <a href="https://drive.google.com/file/d/1nmHLUCMI-2tnkyRy2RLCDPqAiAGjTqCi/view?usp=drive_link"
-                            class="px-5 py-2.5 sm:px-6 sm:py-3 border border-cyan-400 hover:bg-cyan-400/10 rounded-full font-medium transition-colors text-sm sm:text-base
-                                   md:border-2 md:hover:border-cyan-300 md:hover:text-cyan-300 md:hover:shadow md:hover:shadow-cyan-400/20">
+                            class="px-5 py-2.5 sm:px-6 sm:py-3 border border-cyan-400 hover:bg-cyan-400/10 rounded-full font-medium transition-colors text-sm sm:text-base md:border-2 md:hover:border-cyan-300 md:hover:text-cyan-300 md:hover:shadow md:hover:shadow-cyan-400/20">
                             <i class="fas fa-download mr-1"></i> Download CV
                         </a>
                     </div>
@@ -103,184 +65,10 @@
         </div>
     </section>
 
-    <script>
-        // Optimized Typewriter Effect (unchanged)
-        document.addEventListener('DOMContentLoaded', function () {
-            const container = document.querySelector('.typewriter-container');
-            const text = "I build beautiful, high-performance cross-platform applications with Flutter. Passionate about creating intuitive user experiences and pixel-perfect UIs.";
-
-            const isMobile = window.innerWidth < 768;
-            const displayText = isMobile
-                ? "I build high-performance Flutter apps with pixel-perfect UIs."
-                : text;
-
-            let index = 0;
-            const speed = isMobile ? 40 : 30;
-
-            function typeWriter() {
-                if (index < displayText.length) {
-                    if (index === 0) {
-                        const p = document.createElement('p');
-                        p.className = 'typewriter-line';
-                        container.appendChild(p);
-                    }
-                    container.lastChild.textContent += displayText.charAt(index);
-                    index++;
-                    setTimeout(typeWriter, Math.random() * speed + speed);
-                }
-            }
-            setTimeout(typeWriter, 500);
-        });
-    </script>
-
-    <style>
-        /* Existing styles remain exactly the same */
-        .typewriter-line {
-            overflow: hidden;
-            white-space: normal;
-            margin: 0;
-            padding: 0;
-            border-right: 2px solid #38bdf8;
-            animation: blinkTextCursor 0.75s steps(2) infinite;
-            display: inline;
-            word-break: break-word;
-        }
-
-        .glass {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(12px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, #38bdf8, #22d3ee, #2dd4bf);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        @media (max-width: 640px) {
-            #about {
-                padding-top: 3rem;
-                padding-bottom: 3rem;
-            }
-
-            .glass {
-                padding: 1.5rem;
-                margin: 0 0.5rem;
-            }
-
-            .typewriter-line {
-                white-space: normal;
-                display: inline;
-            }
-        }
-
-        @keyframes blinkTextCursor {
-            from {
-                border-right-color: #38bdf8;
-            }
-
-            to {
-                border-right-color: transparent;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes popDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes popUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
-        .animate-pop-down {
-            animation: popDown 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-        }
-
-        .animate-pop-up {
-            animation: popUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-        }
-
-        .animation-delay-100 {
-            animation-delay: 0.1s;
-        }
-
-        .animation-delay-300 {
-            animation-delay: 0.3s;
-        }
-
-        /* PC-only button enhancements */
-        @media (min-width: 768px) {
-            #about a[href="#contact"] {
-                position: relative;
-                overflow: hidden;
-                transition: all 0.3s ease;
-            }
-
-            #about a[href="#contact"]:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
-            }
-
-            #about a[href*="drive.google.com"] {
-                transition: all 0.3s ease;
-            }
-
-            #about a[href*="drive.google.com"]:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
-            }
-
-            #about a[href*="drive.google.com"] i {
-                transition: transform 0.3s ease;
-            }
-
-            #about a[href*="drive.google.com"]:hover i {
-                transform: translateY(-2px);
-            }
-        }
-    </style>
-
     <!-- Skills Section -->
     <section id="skills" class="min-h-screen w-full flex justify-center items-center px-4 sm:px-8 py-16">
         <div class="max-w-4xl w-full">
             <h1 class="text-4xl font-bold text-center mb-12 gradient-text">My Skills</h1>
-
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
                 <!-- Flutter -->
                 <div class="glass p-6 rounded-2xl flex flex-col items-center hover-scale">
@@ -291,7 +79,6 @@
                         <div class="bg-cyan-400 h-2 rounded-full" style="width: 95%"></div>
                     </div>
                 </div>
-
                 <!-- Dart -->
                 <div class="glass p-6 rounded-2xl flex flex-col items-center hover-scale">
                     <img src="https://cdn.worldvectorlogo.com/logos/dart.svg" alt="Dart" class="h-16 tech-icon">
@@ -300,7 +87,32 @@
                         <div class="bg-cyan-400 h-2 rounded-full" style="width: 90%"></div>
                     </div>
                 </div>
-
+                <!-- SQL -->
+                <div class="glass p-6 rounded-2xl flex flex-col items-center hover-scale">
+                    <div class="h-16 w-16 flex items-center justify-center text-4xl text-cyan-300">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="mt-4 font-semibold text-cyan-300">SQL</h3>
+                    <div class="w-full bg-gray-700 rounded-full h-2 mt-2">
+                        <div class="bg-cyan-400 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+                <!-- Python -->
+                <div class="glass p-6 rounded-2xl flex flex-col items-center hover-scale">
+                    <img src="https://cdn.worldvectorlogo.com/logos/python-5.svg" alt="Python" class="h-16 tech-icon">
+                    <h3 class="mt-4 font-semibold text-cyan-300">Python</h3>
+                    <div class="w-full bg-gray-700 rounded-full h-2 mt-2">
+                        <div class="bg-cyan-400 h-2 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+                <!-- Java -->
+                <div class="glass p-6 rounded-2xl flex flex-col items-center hover-scale">
+                    <img src="https://cdn.worldvectorlogo.com/logos/java-4.svg" alt="Java" class="h-16 tech-icon">
+                    <h3 class="mt-4 font-semibold text-cyan-300">Java</h3>
+                    <div class="w-full bg-gray-700 rounded-full h-2 mt-2">
+                        <div class="bg-cyan-400 h-2 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
                 <!-- Firebase -->
                 <div class="glass p-6 rounded-2xl flex flex-col items-center hover-scale">
                     <img src="https://cdn.worldvectorlogo.com/logos/firebase.svg" alt="Firebase" class="h-16 tech-icon">
@@ -309,36 +121,13 @@
                         <div class="bg-cyan-400 h-2 rounded-full" style="width: 85%"></div>
                     </div>
                 </div>
-
-                <!-- UI/UX -->
+                <!-- Supabase -->
                 <div class="glass p-6 rounded-2xl flex flex-col items-center hover-scale">
-                    <div class="h-16 w-16 flex items-center justify-center text-4xl text-cyan-300">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3 class="mt-4 font-semibold text-cyan-300">UI/UX</h3>
+                    <img src="https://raw.githubusercontent.com/supabase/supabase/master/packages/common/assets/images/supabase-logo-icon.svg"
+                        alt="Supabase" class="h-16 tech-icon">
+                    <h3 class="mt-4 font-semibold text-cyan-300">Supabase</h3>
                     <div class="w-full bg-gray-700 rounded-full h-2 mt-2">
-                        <div class="bg-cyan-400 h-2 rounded-full" style="width: 88%"></div>
-                    </div>
-                </div>
-
-                <!-- GetX -->
-                <div class="glass p-6 rounded-2xl flex flex-col items-center hover-scale">
-                    <img src="https://raw.githubusercontent.com/jonataslaw/getx-community/master/getx.png" alt="GetX"
-                        class="h-16 tech-icon">
-                    <h3 class="mt-4 font-semibold text-cyan-300">GetX</h3>
-                    <div class="w-full bg-gray-700 rounded-full h-2 mt-2">
-                        <div class="bg-cyan-400 h-2 rounded-full" style="width: 92%"></div>
-                    </div>
-                </div>
-
-                <!-- REST API -->
-                <div class="glass p-6 rounded-2xl flex flex-col items-center hover-scale">
-                    <div class="h-16 w-16 flex items-center justify-center text-4xl text-cyan-300">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h3 class="mt-4 font-semibold text-cyan-300">REST API</h3>
-                    <div class="w-full bg-gray-700 rounded-full h-2 mt-2">
-                        <div class="bg-cyan-400 h-2 rounded-full" style="width: 87%"></div>
+                        <div class="bg-cyan-400 h-2 rounded-full" style="width: 80%"></div>
                     </div>
                 </div>
 
@@ -352,13 +141,43 @@
                         <div class="bg-cyan-400 h-2 rounded-full" style="width: 90%"></div>
                     </div>
                 </div>
-
-                <!-- Git -->
+                <!-- UI/UX -->
                 <div class="glass p-6 rounded-2xl flex flex-col items-center hover-scale">
-                    <img src="https://cdn.worldvectorlogo.com/logos/git-icon.svg" alt="Git" class="h-16 tech-icon">
-                    <h3 class="mt-4 font-semibold text-cyan-300">Git</h3>
+                    <div class="h-16 w-16 flex items-center justify-center text-4xl text-cyan-300">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="mt-4 font-semibold text-cyan-300">UI/UX</h3>
+                    <div class="w-full bg-gray-700 rounded-full h-2 mt-2">
+                        <div class="bg-cyan-400 h-2 rounded-full" style="width: 88%"></div>
+                    </div>
+                </div>
+                <!-- REST API -->
+                <div class="glass p-6 rounded-2xl flex flex-col items-center hover-scale">
+                    <div class="h-16 w-16 flex items-center justify-center text-4xl text-cyan-300">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="mt-4 font-semibold text-cyan-300">REST API</h3>
+                    <div class="w-full bg-gray-700 rounded-full h-2 mt-2">
+                        <div class="bg-cyan-400 h-2 rounded-full" style="width: 87%"></div>
+                    </div>
+                </div>
+                <!-- Tailwind CSS -->
+                <div class="glass p-6 rounded-2xl flex flex-col items-center hover-scale">
+                    <img src="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/master/.github/logo-light.svg"
+                        alt="Tailwind CSS" class="h-16 tech-icon">
+                    <h3 class="mt-4 font-semibold text-cyan-300">Tailwind CSS</h3>
                     <div class="w-full bg-gray-700 rounded-full h-2 mt-2">
                         <div class="bg-cyan-400 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <!-- Programming (Generic) -->
+                <div class="glass p-6 rounded-2xl flex flex-col items-center hover-scale">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Programming"
+                        class="h-16 tech-icon">
+                    <h3 class="mt-4 font-semibold text-cyan-300">Programming</h3>
+                    <div class="w-full bg-gray-700 rounded-full h-2 mt-2">
+                        <div class="bg-cyan-400 h-2 rounded-full" style="width: 90%"></div>
                     </div>
                 </div>
             </div>
@@ -366,7 +185,6 @@
     </section>
 
     <!-- PROJECTS SECTION -->
-
     <section id="projects"
         class="relative py-20 px-4 sm:px-8 overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800">
         <!-- Animated background elements -->
@@ -376,7 +194,6 @@
                 class="absolute bottom-1/3 right-1/3 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-float-delay">
             </div>
         </div>
-
         <div class="max-w-7xl mx-auto relative z-10">
             <!-- Section Header -->
             <div class="text-center mb-16">
@@ -386,131 +203,11 @@
                 </h1>
                 <div class="h-1 w-20 mx-auto bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"></div>
             </div>
-
-            <!-- Projects Grid -->
-            <div id="projects-container"
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+            <!-- Projects Container -->
+            <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Projects will be inserted here by projects.js -->
             </div>
         </div>
-
-        <style>
-            /* Project Card Styles */
-            #projects-container>div {
-                background: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
-                border-radius: 16px;
-                border: 1px solid rgba(56, 189, 248, 0.15);
-                padding: 1.5rem;
-                width: 100%;
-                max-width: 380px;
-                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-                overflow: hidden;
-                position: relative;
-            }
-
-            #projects-container>div:hover {
-                transform: translateY(-8px) rotateX(3deg) rotateY(2deg);
-                box-shadow: 0 12px 40px rgba(56, 189, 248, 0.25);
-                border-color: rgba(56, 189, 248, 0.3);
-            }
-
-            #projects-container>div::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(90deg,
-                        transparent,
-                        rgba(56, 189, 248, 0.1),
-                        transparent);
-                transition: 0.5s;
-            }
-
-            #projects-container>div:hover::before {
-                left: 100%;
-            }
-
-            /* Video Embed */
-            #projects-container iframe {
-                border-radius: 12px;
-                aspect-ratio: 16/9;
-                margin: 1rem 0;
-                background: #000;
-                border: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            /* Download Button */
-            #projects-container a {
-                background: linear-gradient(135deg, #38bdf8, #3b82f6);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 0.5rem;
-                font-weight: 500;
-                padding: 0.75rem;
-                border-radius: 8px;
-                transition: all 0.3s ease;
-                position: relative;
-                overflow: hidden;
-            }
-
-            #projects-container a:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4);
-            }
-
-            #projects-container a::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(90deg,
-                        transparent,
-                        rgba(255, 255, 255, 0.2),
-                        transparent);
-                transition: 0.5s;
-            }
-
-            #projects-container a:hover::before {
-                left: 100%;
-            }
-
-            /* Disabled Button Style */
-            #projects-container a[href=""] {
-                background: gray;
-                cursor: not-allowed;
-                opacity: 0.7;
-            }
-
-            /* Floating Animation */
-            @keyframes float {
-
-                0%,
-                100% {
-                    transform: translateY(0) translateX(0);
-                }
-
-                50% {
-                    transform: translateY(-20px) translateX(10px);
-                }
-            }
-
-            .animate-float {
-                animation: float 8s ease-in-out infinite;
-            }
-
-            .animate-float-delay {
-                animation: float 10s ease-in-out infinite 2s;
-            }
-        </style>
-
-        <!-- Load your external projects.js file -->
-        <script src="script.js"></script>
     </section>
 
     <!-- Contact Section -->
@@ -518,7 +215,6 @@
         class="min-h-screen w-full flex justify-center items-center px-4 sm:px-8 py-16 bg-gradient-to-b from-gray-900 to-gray-800">
         <div class="glass p-8 sm:p-12 max-w-4xl w-full hover-scale transition-transform duration-300">
             <h1 class="text-4xl font-bold text-center mb-12 gradient-text">Get In Touch</h1>
-
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Contact Info -->
                 <div class="space-y-6">
@@ -537,7 +233,6 @@
                                 </a>
                             </div>
                         </div>
-
                         <div class="flex items-center gap-4 group">
                             <div
                                 class="w-12 h-12 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-300 group-hover:bg-cyan-400/20 transition-colors">
@@ -550,7 +245,6 @@
                                 </a>
                             </div>
                         </div>
-
                         <div class="flex items-center gap-4 group">
                             <div
                                 class="w-12 h-12 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-300 group-hover:bg-cyan-400/20 transition-colors">
@@ -564,7 +258,6 @@
                                 </a>
                             </div>
                         </div>
-
                         <div class="flex items-center gap-4 group">
                             <div
                                 class="w-12 h-12 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-300 group-hover:bg-cyan-400/20 transition-colors">
@@ -580,7 +273,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Contact Form -->
                 <div>
                     <form id="contactForm" class="space-y-4">
@@ -609,64 +301,6 @@
         </div>
     </section>
 
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            // Create mailto link
-            const subject = `Message from ${name}`;
-            const body = `${message}\n\nFrom: ${name}\nEmail: ${email}`;
-            const mailtoLink = `mailto:syedjariabbas1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            // Open email client
-            window.location.href = mailtoLink;
-
-            // Optional: Show success message
-            alert("Your email client will open. Please send the pre-filled message.");
-        });
-    </script>
-
-    <style>
-        /* Add these styles to your existing CSS */
-        .hover-scale {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .hover-scale:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, #38bdf8, #22d3ee, #2dd4bf);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        /* Social icon hover effects */
-        .group:hover .fa-instagram {
-            color: #E1306C;
-        }
-
-        .group:hover .fa-linkedin-in {
-            color: #0077B5;
-        }
-
-        .group:hover .fa-envelope {
-            color: #D44638;
-        }
-
-        .group:hover .fa-phone {
-            color: #25D366;
-        }
-    </style>
-
     <!-- Footer -->
     <footer class="w-full py-6 text-center text-gray-400 text-sm bg-gray-900/50">
         <p>© 2023 Syed Jari Abbas. All rights reserved.</p>
@@ -686,29 +320,8 @@
         </div>
     </footer>
 
-    <style>
-        /* Add to your existing styles */
-        footer a {
-            transition: all 0.3s ease;
-        }
-
-        footer a:hover {
-            transform: translateY(-2px);
-        }
-
-        .fa-linkedin-in:hover {
-            color: #0077B5;
-        }
-
-        .fa-instagram:hover {
-            color: #E1306C;
-        }
-
-        .fa-envelope:hover {
-            color: #D44638;
-        }
-    </style>
-
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
 </body>
 
 </html>
