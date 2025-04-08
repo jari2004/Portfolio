@@ -239,7 +239,7 @@ body::before {
     border-color: var(--primary);
 }
 
-/* Project Video Embeds */
+/* Project Video Embeds - Updated for Mobile Responsiveness */
 #projects-container iframe {
     border-radius: 12px;
     aspect-ratio: 16/9;
@@ -247,6 +247,12 @@ body::before {
     background: #000;
     border: 1px solid rgba(0, 240, 255, 0.3);
     box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+    width: 100%;
+    /* Ensures iframe respects parent width */
+    max-width: 100%;
+    /* Prevents overflow */
+    height: auto;
+    /* Maintains aspect ratio */
 }
 
 /* Project Buttons */
@@ -321,6 +327,16 @@ body::before {
         scroll-snap-align: start;
         width: 85vw;
         min-height: 450px;
+        padding: 1rem;
+        /* Reduced padding for mobile */
+    }
+
+    /* Mobile-specific video embed adjustments */
+    #projects-container iframe {
+        margin: 0.5rem 0;
+        /* Reduced margin */
+        width: calc(100% - 0.5rem);
+        /* Accounts for padding */
     }
 
     #projects-container::after {
